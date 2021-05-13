@@ -7,12 +7,13 @@ import { saveAs } from 'file-saver';
 export class FileConvertService {
   pathSvgString: string = '';
   processedFile: FTFile | undefined = undefined;
-  newFileName: string;
-  constructor(fileBase64String: string, newFileName: string) {
+  newFileName: string = '';
+  constructor() {}
+
+  configure(fileBase64String: string, newFileName: string) {
     this.pathSvgString = atob(fileBase64String);
     this.newFileName = newFileName;
   }
-
   processFile(points: number) {
     const svgPath = new SVG();
     svgPath.loadFromString(this.pathSvgString);
