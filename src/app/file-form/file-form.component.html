@@ -1,4 +1,4 @@
-<p>Import SVG File to convert</p>
+<p class="title">Import SVG File to convert</p>
 <input
   class="fileInput"
   (change)="onChangeForm($event)"
@@ -13,23 +13,7 @@
   min="1"
   #numberForm
 />
-<label> Svg File to convert: </label>
-<button class="uploadbutton" (click)="fileForm.click()" #uploadButton>
-  Upload
-</button>
-<button class="convertbutton" (click)="convert()" #uploadButton>Convert</button>
+<button class="button" (click)="fileForm.click()" #uploadButton>Upload</button>
+<button class="button" (click)="convert()" #uploadButton>Convert</button>
 
-<div
-  id=""
-  style="
-    overflow-y: auto;
-    overflow-wrap: break-word;
-    height: 400px;
-    width: 25%;
-    background-color: lightgray;
-    margin-top: 10px;
-    white-space: pre-wrap;
-  "
->
-  {{ this.status }}
-</div>
+<div id="" class="output">{{ this.status }}</div>

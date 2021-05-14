@@ -1,0 +1,33 @@
+<p class="title">Import FTF File to draw</p>
+<input
+  class="fileInput"
+  (change)="onChangeForm($event)"
+  type="file"
+  [formControl]="nm"
+  #fileForm
+/>
+<input
+  class="numberInputInterval"
+  type="number"
+  [formControl]="interval"
+  min="0.0000001"
+  max="1"
+  #numberFormInterval
+/>
+<input
+  class="numberInputScale"
+  type="number"
+  [formControl]="scale"
+  min="0"
+  #numberFormScale
+/>
+<button class="button" (click)="fileForm.click()" #uploadButton>Upload</button>
+<button class="button" (click)="draw()" #drawButton>Draw</button>
+
+<canvas
+  class="drawCanvas"
+  height="1000"
+  width="1000"
+  id="drawCanvas"
+  #drawCanvas
+></canvas>
