@@ -1,8 +1,35 @@
 <p>Import SVG File to convert</p>
+<input
+  class="fileInput"
+  (change)="onChangeForm($event)"
+  type="file"
+  [formControl]="nm"
+  #fileForm
+/>
+<input
+  class="numberInput"
+  type="number"
+  [formControl]="points"
+  min="1"
+  #numberForm
+/>
+<label> Svg File to convert: </label>
+<button class="uploadbutton" (click)="fileForm.click()" #uploadButton>
+  Upload
+</button>
+<button class="convertbutton" (click)="convert()" #uploadButton>Convert</button>
 
-<label>
-  Svg File to convert:
-  <input (change)="onChangeForm($event)" type="file" [formControl]="nm" />
-</label>
-
-<!-- <button (click)="confirmForm()" [disabled]="!nm.valid">Confirm!</button> -->
+<div
+  id=""
+  style="
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    height: 400px;
+    width: 25%;
+    background-color: lightgray;
+    margin-top: 10px;
+    white-space: pre-wrap;
+  "
+>
+  {{ this.status }}
+</div>

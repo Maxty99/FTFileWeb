@@ -19,9 +19,11 @@
     "@angular/platform-browser": "~12.0.0",
     "@angular/platform-browser-dynamic": "~12.0.0",
     "@angular/router": "~12.0.0",
+    "buffer": "^6.0.3",
     "file-saver": "^2.0.5",
-    "ftfiles": "^1.0.10",
+    "ftfiles": "^1.0.18",
     "rxjs": "~6.6.0",
+    "stream-browserify": "^3.0.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },
