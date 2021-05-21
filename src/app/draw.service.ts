@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FTBuffer, FTDrawer } from 'ftfiles';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -16,16 +17,15 @@ export class DrawService {
   isConfigured(): boolean {
     return this.filebinaryString != '' && this.canvas != undefined;
   }
-  draw(scale: number, interval: number) {
+  draw(scale: number) {
     if (this.isConfigured()) {
       const buf = Buffer.from(this.filebinaryString, 'latin1');
-      console.log(buf.toString());
       const ftBuf = new FTBuffer();
       ftBuf.readFromBuffer(buf);
       const ftDraw = new FTDrawer(ftBuf.getCoefficients());
+
       ftDraw.setCanvas(this.canvas!);
       ftDraw.setScale(scale);
-      ftDraw.setInterval(interval);
       ftDraw.draw();
     }
   }

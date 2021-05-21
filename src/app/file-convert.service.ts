@@ -29,9 +29,9 @@ export class FileConvertService {
     if (path) {
       const ftProc = new FTProcessor(path);
       ftProc.processPoints(points);
-      ftProc.discreteTransform();
+      ftProc.dft();
       const ftBuf = new FTBuffer();
-      ftBuf.coefficients = ftProc.getCoefficients();
+      ftBuf.setCoefficients(ftProc.getCoefficients());
       const fileBuffer = ftBuf.writeToBuffer();
       const blob = new Blob([fileBuffer], { type: 'application/octet-stream' });
       saveAs(blob, this.newFileName);
