@@ -19,8 +19,7 @@
   white-space: pre-wrap;
 }
 .label {
-  text-align: center;
-  font: large;
+  font-family: "Noto Sans";
 }
 .output {
   font-family: "Roboto Mono";

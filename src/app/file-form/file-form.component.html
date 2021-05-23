@@ -1,4 +1,5 @@
-<p class="title">Import SVG File to convert</p>
+<p class="title">Import SVG (single path) File to convert</p>
+<label for="numberForm">Amount of points to integrate: </label>
 <input
   class="fileInput"
   (change)="onChangeForm($event)"
@@ -11,7 +12,7 @@
   type="number"
   [formControl]="points"
   min="1"
-  #numberForm
+  id="numberForm"
 />
 <button class="button" (click)="fileForm.click()" #uploadButton>Upload</button>
 <button class="button" (click)="convert()" #uploadButton>Convert</button>
