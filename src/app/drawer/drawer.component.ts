@@ -11,6 +11,7 @@ import { DrawService } from '../draw.service';
 export class DrawerComponent implements OnInit {
   nm: FormControl = new FormControl();
   scale: FormControl = new FormControl(1);
+  points: FormControl = new FormControl(100);
   binaryFile: string | null = '';
   canvas: HTMLCanvasElement | undefined = undefined;
 
@@ -43,7 +44,7 @@ export class DrawerComponent implements OnInit {
 
   draw() {
     if (this.drawService.isConfigured()) {
-      this.drawService.draw(this.scale.value);
+      this.drawService.draw(this.scale.value, this.points.value);
     } else {
       console.log('Something went wrong');
     }

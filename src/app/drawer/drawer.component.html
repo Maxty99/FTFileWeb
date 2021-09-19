@@ -13,6 +13,14 @@
   min="0"
   #numberFormScale
 />
+<input
+  class="numberInputPoints"
+  type="number"
+  [formControl]="points"
+  min="1"
+  (change)="draw()"
+  #numberFormPoints
+/>
 <button class="button" (click)="fileForm.click()" #uploadButton>Upload</button>
 <button class="button" (click)="draw()" #drawButton>Draw</button>
 
